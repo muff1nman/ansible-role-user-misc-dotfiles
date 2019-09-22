@@ -1,0 +1,1 @@
+%_gpg_name {{ rpm_gpg_name }} <{{ rpm_gpg_email }}>

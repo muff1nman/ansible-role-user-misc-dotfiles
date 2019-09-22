@@ -1,0 +1,6 @@
+---
+copied_dotfiles:
+  - screenrc
+  - ideavimrc
+templated_dotfiles:
+  - rpmmacros
