@@ -1,12 +1,16 @@
 ---
+- name: Create directories
+  file:
+    state: directory
+    path: "{{ item }}"
+  with_items: "{{ desktop_user_vars.dir }}/{{ directories_for_dotfiles }}"
 - name: Copy dotfile
   copy:
-    src: "{{ item }}"
-    dest: "{{ desktop_user_vars.dir }}/.{{ item }}"
+    src: "{{ item | regex_replace('^\\.', '') }}"
+    dest: "{{ desktop_user_vars.dir }}/{{ item }}"
   with_items: "{{ copied_dotfiles }}"
 - name: Template dotfile
   template:
-    src: "{{ item }}"
-    dest: "{{ desktop_user_vars.dir }}/.{{ item }}"
+    src: "{{ item | regex_replace('^\\.', '') }}"
+    dest: "{{ desktop_user_vars.dir }}/{{ item }}"
   with_items: "{{ templated_dotfiles }}"
-

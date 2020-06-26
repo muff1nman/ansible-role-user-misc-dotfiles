@@ -1,6 +1,9 @@
 ---
 copied_dotfiles:
-  - screenrc
-  - ideavimrc
+  - .screenrc
+  - .ideavimrc
+  - .elodie/config.ini
 templated_dotfiles:
-  - rpmmacros
+  - .rpmmacros
+directories_for_dotfiles:
+  - .elodie
